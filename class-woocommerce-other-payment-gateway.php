@@ -50,9 +50,11 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 						'desc_tip'		=> true,
 					),
 					'description' => array(
-										'title' => __( 'Customer Message', 'woocommerce' ),
-										'type' => 'textarea',
-										'default' => ''
+						'title' => __( 'Customer Message', 'woocommerce' ),
+						'type' => 'textarea',
+						'default' => 'None of the other payment options are suitable for you? please drop us a note about your favourable payment option and we will contact you as soon as possible.',
+						'description' 	=> __( 'The message which you want it to appear to the customer in the checkout page.', 'woocommerce' ),
+
 					)
 			 );
 		
