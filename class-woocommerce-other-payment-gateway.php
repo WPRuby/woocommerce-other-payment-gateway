@@ -6,7 +6,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 
 	
 	public function __construct(){
-		$this->id = 'auspost';
+		$this->id = 'other_payment';
 		$this->method_title = __('Other Payment','woocommerce-other-payment-gateway');
 		$this->title = __('Other Payment','woocommerce-other-payment-gateway');
 		$this->has_fields = true;
@@ -17,6 +17,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 
 		$this->enabled = $this->get_option('enabled');
 		$this->title = $this->get_option('title');
+		$this->description = $this->get_option('description');
 		
 		
 	
@@ -24,7 +25,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 
 
 
-		add_action('woocommerce_update_options_shipping_'.$this->id, array($this, 'process_admin_options'));
+		add_action('woocommerce_update_options_payment_gateways_'.$this->id, array($this, 'process_admin_options'));
 
 
 	}
@@ -38,14 +39,14 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 					'enabled' => array(
 					'title' 		=> __( 'Enable/Disable', 'woocommerce' ),
 					'type' 			=> 'checkbox',
-					'label' 		=> __( 'Enable Australian Post', 'woocommerce' ),
+					'label' 		=> __( 'Enable Other Payment', 'woocommerce' ),
 					'default' 		=> 'yes'
 					),
 					'title' => array(
 						'title' 		=> __( 'Method Title', 'woocommerce' ),
 						'type' 			=> 'text',
 						'description' 	=> __( 'This controls the title', 'woocommerce' ),
-						'default'		=> __( 'Australian Post Shipping', 'woocommerce' ),
+						'default'		=> __( 'Other Payment', 'woocommerce' ),
 						'desc_tip'		=> true,
 					),
 					'description' => array(
@@ -71,26 +72,13 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 	public function admin_options() {
 
 		?>
-		<h3><?php _e( 'Austrlia Post Settings', 'woocommerce' ); ?></h3>
+		<h3><?php _e( 'Other Payment Settings', 'woocommerce' ); ?></h3>
 		<table class="form-table">
 		<?php
 			// Generate the HTML For the settings form.
 			$this->generate_settings_html();
 		?>
 		</table><!--/.form-table-->
-		<p>
-			
-			<h3>Notes: </h3>
-			<ol>
-				<li><a target="_blank" href="http://auspost.com.au/parcels-mail/size-and-weight-guidelines.html">Weight and Size Guidlines </a>from Australia Post.</li>
-				<li>Do you ship internationally? Do you charge handling fees? <a href="http://waseem-senjer.com/product/australian-post-woocommerce-extension-pro/" target="_blank">Get the PRO</a> version from this plugin with other cool features for <span style="color:green;">only 9$</span> </li>
-				<li>If you encountered any problem with the plugin, please do not hesitate <a target="_blank" href="http://waseem-senjer.com/submit-ticket/">submitting a support ticket</a>.</li>
-				<li>If you like the plugin please leave me a <a target="_blank" href="https://wordpress.org/support/view/plugin-reviews/australian-post-woocommerce-extension?filter=5#postform">★★★★★</a> rating. A huge thank you from me in advance!</li>
-				
-			</ol>
-
-			
-		</p>
 		<?php
 	}
 
@@ -107,7 +95,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 
 	// Reduce stock levels
 	$order->reduce_order_stock();
-	$order->add_order_note($_POST['p'],1);
+	$order->add_order_note(esc_html($_POST[ $this->id.'-admin-note']),1);
 	// Remove cart
 	$woocommerce->cart->empty_cart();
 
@@ -122,11 +110,16 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 }
 
 	public function payment_fields(){
+		
 		?>
-		<p>
-			<label>Option</label>
-			<textarea name="p"></textarea>
-		</p>
+		<fieldset>
+			<p class="form-row form-row-wide">
+				<label for="<?php echo $this->id; ?>-admin-note"><?php echo esc_attr($this->description); ?> <span class="required">*</span></label>
+				<textarea id="<?php echo $this->id; ?>-admin-note" class="input-text" type="text" name="<?php echo $this->id; ?>-admin-note"></textarea>
+			</p>						
+			<div class="clear"></div>
+		</fieldset>
+		
 
 		<?php
 	}
