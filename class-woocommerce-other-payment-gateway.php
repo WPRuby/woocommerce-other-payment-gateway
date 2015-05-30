@@ -9,7 +9,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 		$this->id = 'auspost';
 		$this->method_title = __('Other Payment','woocommerce-other-payment-gateway');
 		$this->title = __('Other Payment','woocommerce-other-payment-gateway');
-		
+		$this->has_fields = true;
 
 		$this->init_form_fields();
 		$this->init_settings();
@@ -47,6 +47,11 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 						'description' 	=> __( 'This controls the title', 'woocommerce' ),
 						'default'		=> __( 'Australian Post Shipping', 'woocommerce' ),
 						'desc_tip'		=> true,
+					),
+					'description' => array(
+										'title' => __( 'Customer Message', 'woocommerce' ),
+										'type' => 'textarea',
+										'default' => ''
 					)
 			 );
 		
@@ -89,11 +94,42 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 		<?php
 	}
 
-	public function is_available( $package ){
+	public function is_available(  ){
 		return true;
 	}
 
+	function process_payment( $order_id ) {
+	global $woocommerce;
+	$order = new WC_Order( $order_id );
+
+	// Mark as on-hold (we're awaiting the cheque)
+	$order->update_status('on-hold', __( 'Awaiting payment', 'woocommerce' ));
+
+	// Reduce stock levels
+	$order->reduce_order_stock();
+	$order->add_order_note($_POST['p'],1);
+	// Remove cart
+	$woocommerce->cart->empty_cart();
+
+	// Return thankyou redirect
+	return array(
+		'result' => 'success',
+		'redirect' => $this->get_return_url( $order )
+	);
+
+
 	
+}
+
+	public function payment_fields(){
+		?>
+		<p>
+			<label>Option</label>
+			<textarea name="p"></textarea>
+		</p>
+
+		<?php
+	}
 	
 
 
