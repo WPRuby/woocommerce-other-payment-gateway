@@ -37,23 +37,23 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 				$this->form_fields = array(
 
 					'enabled' => array(
-					'title' 		=> __( 'Enable/Disable', 'woocommerce' ),
+					'title' 		=> __( 'Enable/Disable', 'woocommerce-other-payment-gateway' ),
 					'type' 			=> 'checkbox',
-					'label' 		=> __( 'Enable Other Payment', 'woocommerce' ),
+					'label' 		=> __( 'Enable Other Payment', 'woocommerce-other-payment-gateway' ),
 					'default' 		=> 'yes'
 					),
 					'title' => array(
-						'title' 		=> __( 'Method Title', 'woocommerce' ),
+						'title' 		=> __( 'Method Title', 'woocommerce-other-payment-gateway' ),
 						'type' 			=> 'text',
-						'description' 	=> __( 'This controls the title', 'woocommerce' ),
-						'default'		=> __( 'Other Payment', 'woocommerce' ),
+						'description' 	=> __( 'This controls the title', 'woocommerce-other-payment-gateway' ),
+						'default'		=> __( 'Other Payment', 'woocommerce-other-payment-gateway' ),
 						'desc_tip'		=> true,
 					),
 					'description' => array(
-						'title' => __( 'Customer Message', 'woocommerce' ),
+						'title' => __( 'Customer Message', 'woocommerce-other-payment-gateway' ),
 						'type' => 'textarea',
 						'default' => 'None of the other payment options are suitable for you? please drop us a note about your favourable payment option and we will contact you as soon as possible.',
-						'description' 	=> __( 'The message which you want it to appear to the customer in the checkout page.', 'woocommerce' ),
+						'description' 	=> __( 'The message which you want it to appear to the customer in the checkout page.', 'woocommerce-other-payment-gateway' ),
 
 					)
 			 );
@@ -74,7 +74,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 	public function admin_options() {
 
 		?>
-		<h3><?php _e( 'Other Payment Settings', 'woocommerce' ); ?></h3>
+		<h3><?php _e( 'Other Payment Settings', 'woocommerce-other-payment-gateway' ); ?></h3>
 		<table class="form-table">
 		<?php
 			// Generate the HTML For the settings form.
@@ -84,16 +84,14 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 		<?php
 	}
 
-	public function is_available(  ){
-		return true;
-	}
+
 
 	function process_payment( $order_id ) {
 	global $woocommerce;
 	$order = new WC_Order( $order_id );
 
 	// Mark as on-hold (we're awaiting the cheque)
-	$order->update_status('on-hold', __( 'Awaiting payment', 'woocommerce' ));
+	$order->update_status('on-hold', __( 'Awaiting payment', 'woocommerce-other-payment-gateway' ));
 
 	// Reduce stock levels
 	$order->reduce_order_stock();
