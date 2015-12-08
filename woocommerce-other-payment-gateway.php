@@ -3,7 +3,7 @@
  * Plugin Name:       WooCommerce Other Payment Gateway
  * Plugin URI:        http://waseem-senjer.com/
  * Description:       Do NOT miss any sale!
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Waseem Senjer
  * Author URI:        http://waseem-senjer.com
  * Text Domain:       woocommerce-other-payment-gateway
