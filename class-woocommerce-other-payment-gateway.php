@@ -52,6 +52,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 					'description' => array(
 						'title' => __( 'Customer Message', 'woocommerce-other-payment-gateway' ),
 						'type' => 'textarea',
+						'css' => 'width:500px;',
 						'default' => 'None of the other payment options are suitable for you? please drop us a note about your favourable payment option and we will contact you as soon as possible.',
 						'description' 	=> __( 'The message which you want it to appear to the customer in the checkout page.', 'woocommerce-other-payment-gateway' ),
 
@@ -75,12 +76,22 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 
 		?>
 		<h3><?php _e( 'Other Payment Settings', 'woocommerce-other-payment-gateway' ); ?></h3>
+		<a href="https://goo.gl/ysxWvO" target="_blank">
+				<img style="z-index:99999; width:200px; position:fixed; bottom:5px; right:5px;" src="<?php echo WCCUSTOMPAYMENT_LITE_URL; ?>pro_version.png">
+		</a>
 		<table class="form-table">
 		<?php
 			// Generate the HTML For the settings form.
 			$this->generate_settings_html();
 		?>
 		</table><!--/.form-table-->
+		<p>
+			<h3>Notes: </h3>
+			<ol>
+				<li>If you encountered any problem with the plugin, please do not hesitate <a target="_blank" href="https://waseem-senjer.com/submit-ticket/">submitting a support ticket</a>.</li>
+				<li>If you like the plugin please leave me a <a target="_blank" href="https://wordpress.org/support/view/plugin-reviews/woocommerce-other-payment-gateway?filter=5#postform">★★★★★</a> rating. A huge thank you from me in advance!</li>
+			</ol>	
+		</p>
 		<?php
 	}
 

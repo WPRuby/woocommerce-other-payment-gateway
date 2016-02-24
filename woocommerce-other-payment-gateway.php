@@ -1,9 +1,9 @@
 <?php
 /* @wordpress-plugin
- * Plugin Name:       WooCommerce Other Payment Gateway
- * Plugin URI:        http://waseem-senjer.com/
+ * Plugin Name:       WooCommerce Customized Payment Gateway
+ * Plugin URI:        https://waseem-senjer.com/product/woocommerce-customized-payment-gateway-pro/
  * Description:       Do NOT miss any sale!
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Waseem Senjer
  * Author URI:        http://waseem-senjer.com
  * Text Domain:       woocommerce-other-payment-gateway
@@ -12,7 +12,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-
+define('WCCUSTOMPAYMENT_LITE_URL', plugin_dir_url(__FILE__));
 $active_plugins = apply_filters('active_plugins', get_option('active_plugins'));
 if(in_array('woocommerce/woocommerce.php', $active_plugins)){
 
