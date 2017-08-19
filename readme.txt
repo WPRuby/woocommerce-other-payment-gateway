@@ -4,7 +4,7 @@ Donate link: https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/
 Tags: woocommerce,payment gateway, woocommerce extension, other payment,payment, payment option, custom payment
 Requires at least: 3.5.1
 Tested up to: 4.5
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,7 +70,12 @@ If the customer can't pay with your payment gateways, give him the opportunity t
 
 == Changelog ==
 
-= 1.0.4 =
+= 1.0.6 =
+* ADDED: option to hide the payment form
+* FIXED: replace deprecated WC functions.
+
+
+= 1.0.5 =
 * FIXED: remove PHP warning.
 
 
