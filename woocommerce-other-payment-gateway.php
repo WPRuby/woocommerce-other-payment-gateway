@@ -4,6 +4,8 @@
  * Plugin URI:        https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/
  * Description:       Design your own payment gateway by drag and drop.
  * Version:           1.0.6
+ * WC requires at least: 2.6
+ * WC tested up to: 3.3
  * Author:            WPRuby
  * Author URI:        https://wpruby.com
  * Text Domain:       woocommerce-other-payment-gateway
@@ -13,7 +15,7 @@
  */
 
 $active_plugins = apply_filters('active_plugins', get_option('active_plugins'));
-if(in_array('woocommerce/woocommerce.php', $active_plugins)){
+if(wpruby_custom_payment_is_woocommerce_active()){
 	add_filter('woocommerce_payment_gateways', 'add_other_payment_gateway');
 	function add_other_payment_gateway( $gateways ){
 		$gateways[] = 'WC_Other_Payment_Gateway';
@@ -29,4 +31,22 @@ if(in_array('woocommerce/woocommerce.php', $active_plugins)){
 	function other_payment_load_plugin_textdomain() {
 	  load_plugin_textdomain( 'woocommerce-other-payment-gateway', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
+
+
+
+}
+
+
+/**
+ * @return bool
+ */
+function wpruby_custom_payment_is_woocommerce_active()
+{
+	$active_plugins = (array) get_option('active_plugins', array());
+
+	if (is_multisite()) {
+		$active_plugins = array_merge($active_plugins, get_site_option('active_sitewide_plugins', array()));
+	}
+
+	return in_array('woocommerce/woocommerce.php', $active_plugins) || array_key_exists('woocommerce/woocommerce.php', $active_plugins);
 }
