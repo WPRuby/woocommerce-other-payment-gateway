@@ -169,7 +169,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 
 		<fieldset>
 			<p class="form-row form-row-wide">
-				<label for="<?php echo $this->id; ?>-admin-note"><?php echo esc_attr($this->description); ?> <span class="required">*</span></label>
+				<label for="<?php echo $this->id; ?>-admin-note"><?php echo ($this->description); ?> <span class="required">*</span></label>
 				<textarea id="<?php echo $this->id; ?>-admin-note" class="input-text" type="text" name="<?php echo $this->id; ?>-admin-note"></textarea>
 			</p>						
 			<div class="clear"></div>
