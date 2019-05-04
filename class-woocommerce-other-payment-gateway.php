@@ -2,6 +2,8 @@
 
 class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 
+    private $order_status;
+
 	public function __construct(){
 		$this->id = 'other_payment';
 		$this->method_title = __('Custom Payment','woocommerce-other-payment-gateway');
@@ -13,9 +15,12 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 		$this->title = $this->get_option('title');
 		$this->description = $this->get_option('description');
 		$this->hide_text_box = $this->get_option('hide_text_box');
+		$this->order_status = $this->get_option('order_status');
+
 
 		add_action('woocommerce_update_options_payment_gateways_'.$this->id, array($this, 'process_admin_options'));
 	}
+
 	public function init_form_fields(){
 				$this->form_fields = array(
 					'enabled' => array(
@@ -45,7 +50,13 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 						'default' 		=> 'no',
 						'description' 	=> __( 'If you do not need to show the text box for customers at all, enable this option.', 'woocommerce-other-payment-gateway' ),
 					),
-
+					'order_status' => array(
+						'title' => __( 'Order Status After The Checkout', 'woocommerce-other-payment-gateway' ),
+						'type' => 'select',
+						'options' => wc_get_order_statuses(),
+						'default' => 'wc-on-hold',
+						'description' 	=> __( 'The default order status if this gateway used in payment.', 'woocommerce-other-payment-gateway' ),
+					),
 			 );
 	}
 	/**
@@ -148,7 +159,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 		global $woocommerce;
 		$order = new WC_Order( $order_id );
 		// Mark as on-hold (we're awaiting the cheque)
-		$order->update_status('on-hold', __( 'Awaiting payment', 'woocommerce-other-payment-gateway' ));
+		$order->update_status($this->order_status, __( 'Awaiting payment', 'woocommerce-other-payment-gateway' ));
 		// Reduce stock levels
 		wc_reduce_stock_levels( $order_id );
 		if(isset($_POST[ $this->id.'-admin-note']) && trim($_POST[ $this->id.'-admin-note'])!=''){
