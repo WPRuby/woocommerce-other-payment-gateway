@@ -15,6 +15,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 		$this->title = $this->get_option('title');
 		$this->description = $this->get_option('description');
 		$this->hide_text_box = $this->get_option('hide_text_box');
+		$this->text_box_required = $this->get_option('text_box_required');
 		$this->order_status = $this->get_option('order_status');
 
 
@@ -29,7 +30,8 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 					'label' 		=> __( 'Enable Custom Payment', 'woocommerce-other-payment-gateway' ),
 					'default' 		=> 'yes'
 					),
-					'title' => array(
+
+		            'title' => array(
 						'title' 		=> __( 'Method Title', 'woocommerce-other-payment-gateway' ),
 						'type' 			=> 'text',
 						'description' 	=> __( 'This controls the title', 'woocommerce-other-payment-gateway' ),
@@ -42,6 +44,12 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 						'css' => 'width:500px;',
 						'default' => 'None of the other payment options are suitable for you? please drop us a note about your favourable payment option and we will contact you as soon as possible.',
 						'description' 	=> __( 'The message which you want it to appear to the customer in the checkout page.', 'woocommerce-other-payment-gateway' ),
+					),
+					'text_box_required' => array(
+						'title' 		=> __( 'Make the text field required', 'woocommerce-other-payment-gateway' ),
+						'type' 			=> 'checkbox',
+						'label' 		=> __( 'Make the text field required', 'woocommerce-other-payment-gateway' ),
+						'default' 		=> 'no'
 					),
 					'hide_text_box' => array(
 						'title' 		=> __( 'Hide The Payment Field', 'woocommerce-other-payment-gateway' ),
@@ -155,6 +163,20 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 				</style>
 				<?php
 	}
+
+	public function validate_fields() {
+	    if($this->text_box_required === 'no'){
+	        return true;
+        }
+
+	    $textbox_value = (isset($_POST['text']))? trim($_POST['text']): '';
+		if($textbox_value === ''){
+			wc_add_notice( __('Please, complete the payment information.','woocommerce-custom-payment-gateway'), 'error');
+			return false;
+        }
+		return true;
+	}
+
 	public function process_payment( $order_id ) {
 		global $woocommerce;
 		$order = new WC_Order( $order_id );
