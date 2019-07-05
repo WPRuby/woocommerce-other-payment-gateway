@@ -3,8 +3,8 @@
  * Plugin Name:       WooCommerce Custom Payment Gateway
  * Plugin URI:        https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/
  * Description:       Design your own payment gateway by drag and drop.
- * Version:           1.2.0
- * WC requires at least: 2.6
+ * Version:           1.3.0
+ * WC requires at least: 3.0
  * WC tested up to: 3.6
  * Author:            WPRuby
  * Author URI:        https://wpruby.com
