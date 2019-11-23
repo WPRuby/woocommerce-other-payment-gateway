@@ -197,17 +197,16 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 	}
 
 	public function payment_fields(){
-		if($this->hide_text_box !== 'yes'){
 	    ?>
-
 		<fieldset>
 			<p class="form-row form-row-wide">
-				<label for="<?php echo $this->id; ?>-admin-note"><?php echo ($this->description); ?> <span class="required">*</span></label>
-				<textarea id="<?php echo $this->id; ?>-admin-note" class="input-text" type="text" name="<?php echo $this->id; ?>-admin-note"></textarea>
+                <label for="<?php echo $this->id; ?>-admin-note"><?php echo ($this->description); ?> <span class="required">*</span></label>
+                <?php if($this->hide_text_box !== 'yes'){ ?>
+				    <textarea id="<?php echo $this->id; ?>-admin-note" class="input-text" type="text" name="<?php echo $this->id; ?>-admin-note"></textarea>
+                <?php } ?>
 			</p>						
 			<div class="clear"></div>
 		</fieldset>
 		<?php
-		}
 	}
 }
