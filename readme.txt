@@ -3,11 +3,11 @@ Contributors: waseem_senjer,wprubyplugins
 Donate link: https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/
 Tags: woocommerce,payment gateway, woocommerce extension, other payment,payment, payment option, custom payment
 Requires at least: 4.0
-Tested up to: 5.2
-Stable tag: 1.3.1
+Tested up to: 5.3
+Stable tag: 1.3.2
 Requires PHP: 5.2
 WC requires at least: 2.4
-WC tested up to: 3.7
+WC tested up to: 3.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -125,10 +125,16 @@ The debug mode is an excellent tool to test out the plugin’s settings and the 
 3. Upload the `woocommerce-other-payment-gateway` directory to the `/wp-content/plugins/` directory
 4. Activate the plugin in the Plugin dashboard
 
-
-
-
 == Changelog ==
+= 1.3.2 =
+* FIXED: show the customer note if the textarea field is hidded.
+
+= 1.3.1 =
+* FIXED: The validation of the textarea field.
+
+= 1.3.0 =
+* ADDED: The ability to hide the textarea field at checkout.
+
 = 1.2.0 =
 * ADDED: Now, you can select the default order status after the customer checkout.
 
