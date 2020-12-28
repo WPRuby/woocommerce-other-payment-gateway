@@ -88,8 +88,8 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 	                        <div id="side-sortables" class="meta-box-sortables ui-sortable"> 
 	                           
      							<div class="postbox ">
-	                                <div class="handlediv" title="Click to toggle"><br></div>
 	                                <h3 class="hndle"><span><i class="dashicons dashicons-update"></i>&nbsp;&nbsp;Upgrade to Pro</span></h3>
+                                    <hr>
 	                                <div class="inside">
 	                                    <div class="support-widget">
 	                                        <ul>
@@ -106,8 +106,8 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 	                                </div>
 	                            </div>
 	                            <div class="postbox ">
-	                                <div class="handlediv" title="Click to toggle"><br></div>
 	                                <h3 class="hndle"><span><i class="dashicons dashicons-editor-help"></i>&nbsp;&nbsp;Plugin Support</span></h3>
+                                    <hr>
 	                                <div class="inside">
 	                                    <div class="support-widget">
 	                                        <p>
@@ -126,8 +126,8 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 	                            </div>
 	                       
 	                            <div class="postbox rss-postbox">
-	    							<div class="handlediv" title="Click to toggle"><br></div>
 	    								<h3 class="hndle"><span><i class="fa fa-wordpress"></i>&nbsp;&nbsp;WPRuby Blog</span></h3>
+                                        <hr>
 	    								<div class="inside">
 											<div class="rss-widget">
 												<?php
@@ -155,11 +155,13 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 					border-color:#4CAF50 !important;
 					color:#ffffff !important;
 					width:100%;
-					padding:5px !important;
 					text-align:center;
 					height:35px !important;
 					font-size:12pt !important;
 				}
+                .wpruby_button .dashicons {
+                    padding-top: 5px;
+                }
 				</style>
 				<?php
 	}
