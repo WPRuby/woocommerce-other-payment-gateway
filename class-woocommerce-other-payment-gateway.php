@@ -94,9 +94,11 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 	                                    <div class="support-widget">
 	                                        <ul>
 	                                            <li>» Full Form Builder</li>
+	                                            <li>» Create Unlimited Custom Gateways</li>
 	                                            <li>» Custom Gateway Icon</li>
 	                                            <li>» Order Status After Checkout</li>
 	                                            <li>» Custom API Requests</li>
+	                                            <li>» Payment Information in Order’s Email</li>
 	                                            <li>» Debugging Mode</li>
 	                                            <li>» Auto Hassle-Free Updates</li>
 	                                            <li>» High Priority Customer Support</li>
