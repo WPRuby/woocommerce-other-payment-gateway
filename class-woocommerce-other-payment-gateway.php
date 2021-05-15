@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 
@@ -85,8 +85,8 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 						</table><!--/.form-table-->
 					</div>
 					<div id="postbox-container-1" class="postbox-container">
-	                        <div id="side-sortables" class="meta-box-sortables ui-sortable"> 
-	                           
+	                        <div id="side-sortables" class="meta-box-sortables ui-sortable">
+
      							<div class="postbox ">
 	                                <h3 class="hndle"><span><i class="dashicons dashicons-update"></i>&nbsp;&nbsp;Upgrade to Pro</span></h3>
                                     <hr>
@@ -103,7 +103,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 	                                            <li>» Auto Hassle-Free Updates</li>
 	                                            <li>» High Priority Customer Support</li>
 	                                        </ul>
-											<a href="https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/" class="button wpruby_button" target="_blank"><span class="dashicons dashicons-star-filled"></span> Upgrade Now</a> 
+											<a href="https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/" class="button wpruby_button" target="_blank"><span class="dashicons dashicons-star-filled"></span> Upgrade Now</a>
 	                                    </div>
 	                                </div>
 	                            </div>
@@ -126,7 +126,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 	                                    </div>
 	                                </div>
 	                            </div>
-	                       
+
 	                            <div class="postbox rss-postbox">
 	    								<h3 class="hndle"><span><i class="fa fa-wordpress"></i>&nbsp;&nbsp;WPRuby Blog</span></h3>
                                         <hr>
@@ -197,18 +197,18 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 		return array(
 			'result' => 'success',
 			'redirect' => $this->get_return_url( $order )
-		);	
+		);
 	}
 
 	public function payment_fields(){
 	    ?>
 		<fieldset>
 			<p class="form-row form-row-wide">
-                <label for="<?php echo $this->id; ?>-admin-note"><?php echo ($this->description); ?> <span class="required">*</span></label>
+                <label for="<?php echo $this->id; ?>-admin-note"><?php echo ($this->description); ?> <?php if($this->text_box_required === 'yes'): ?> <span class="required">*</span> <?php endif; ?></label>
                 <?php if($this->hide_text_box !== 'yes'){ ?>
 				    <textarea id="<?php echo $this->id; ?>-admin-note" class="input-text" type="text" name="<?php echo $this->id; ?>-admin-note"></textarea>
                 <?php } ?>
-			</p>						
+			</p>
 			<div class="clear"></div>
 		</fieldset>
 		<?php
