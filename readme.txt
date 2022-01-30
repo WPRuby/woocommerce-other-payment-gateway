@@ -3,11 +3,11 @@ Contributors: waseem_senjer,wprubyplugins
 Donate link: https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/
 Tags: woocommerce,payment gateway, woocommerce extension, other payment,payment, payment option, custom payment
 Requires at least: 4.0
-Tested up to: 5.7
-Stable tag: 1.3.4
+Tested up to: 5.9
+Stable tag: 1.3.5
 Requires PHP: 5.6
 WC requires at least: 3.0
-WC tested up to: 5.3
+WC tested up to: 6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -126,8 +126,11 @@ The debug mode is an excellent tool to test out the plugin’s settings and the 
 4. Activate the plugin in the Plugin dashboard
 
 == Changelog ==
+= 1.3.5 =
+* Added: WordPress 5.9 compatibility.
+
 = 1.3.4 =
-* FIXED: remove red Asterix on checkout when the field is not required.
+* FIXED: remove red Astrix on checkout when the field is not required.
 
 = 1.3.3 =
 * FIXED: The settings page widgets were broken after WP 5.5
