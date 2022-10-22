@@ -5,7 +5,7 @@
  * Description:       Design your own payment gateway by drag and drop.
  * Version:           1.3.5
  * WC requires at least: 3.0
- * WC tested up to: 6.1
+ * WC tested up to: 7.0
  * Author:            WPRuby
  * Author URI:        https://wpruby.com
  * Text Domain:       woocommerce-other-payment-gateway

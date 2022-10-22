@@ -3,11 +3,11 @@ Contributors: waseem_senjer,wprubyplugins
 Donate link: https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/
 Tags: woocommerce,payment gateway, woocommerce extension, other payment,payment, payment option, custom payment
 Requires at least: 4.0
-Tested up to: 5.9
+Tested up to: 6.0.1
 Stable tag: 1.3.5
 Requires PHP: 5.6
 WC requires at least: 3.0
-WC tested up to: 6.1
+WC tested up to: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,8 +17,8 @@ Do not miss a single sale! This plugin is very useful to catch every possible sa
 == Description ==
 If the customer can't pay with your payment gateways, give him the opportunity to submit the order and send to you a note on payment options he can pay you with. The plugin is very simple and effective. The more important is it's very easy to setup and use.
 
-
-
+ [Upgrade to Pro Now](https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/?utm_source=custom-payment-lite&utm_medium=readme&utm_campaign=freetopro "Upgrade to Pro")
+ [Documentation](https://wpruby.com/knowledgebase_category/woocommerce-custom-payment-gateway-pro/?utm_source=custom-payment-lite&utm_medium=readme&utm_campaign=freetopro "Documentation")
 
 ### Customer Message
 A gateway description appears to the customer at the Checkout page to provide him with additional information about your custom gateway.
@@ -85,7 +85,7 @@ An option is available to add the submitted payment information in the Order’s
 The debug mode is an excellent tool to test out the plugin’s settings and the checkout page as the payment gateway will be only activated for you if the Debug Mode is enabled.
 
 
- [Upgrade to Pro Now](https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/ "Upgrade to Pro")
+
 
 
 
