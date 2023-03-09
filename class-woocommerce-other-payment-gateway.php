@@ -189,7 +189,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 		// Reduce stock levels
 		wc_reduce_stock_levels( $order_id );
 		if(isset($_POST[ $this->id.'-admin-note']) && trim($_POST[ $this->id.'-admin-note'])!=''){
-			$order->add_order_note(esc_html($_POST[ $this->id.'-admin-note']),1);
+			$order->add_order_note(esc_html($_POST[ $this->id.'-admin-note']));
 		}
 		// Remove cart
 		$woocommerce->cart->empty_cart();
