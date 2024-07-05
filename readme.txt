@@ -3,11 +3,11 @@ Contributors: waseem_senjer,wprubyplugins
 Donate link: https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/
 Tags: woocommerce,payment gateway, woocommerce extension, other payment,payment, payment option, custom payment
 Requires at least: 4.0
-Tested up to: 6.3
-Stable tag: 1.3.8
+Tested up to: 6.5
+Stable tag: 1.3.9
 Requires PHP: 7.0
 WC requires at least: 3.0
-WC tested up to: 7.9
+WC tested up to: 9.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -126,6 +126,9 @@ The debug mode is an excellent tool to test out the plugin’s settings and the 
 4. Activate the plugin in the Plugin dashboard
 
 == Changelog ==
+= 1.3.9 =
+* Added: WordPress 6.4 compatibility.
+* Added: WooCommerce 8.4 compatibility.
 
 = 1.3.8 =
 * Declaring support for WooCommerce High-Performance Order Storage
