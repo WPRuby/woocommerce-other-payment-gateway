@@ -3,6 +3,9 @@
 class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 
     private $order_status;
+    private $text_box_required;
+    private $hide_text_box;
+
 
 	public function __construct(){
 		$this->id = 'other_payment';
