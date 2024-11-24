@@ -172,15 +172,21 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 	}
 
 	public function validate_fields() {
-	    if($this->text_box_required === 'no'){
+	    if ($this->text_box_required === 'no') {
 	        return true;
         }
 
+        if ($this->hide_text_box === 'yes') {
+            return true;
+        }
+
 	    $textbox_value = (isset($_POST['other_payment-admin-note']))? trim($_POST['other_payment-admin-note']): '';
-		if($textbox_value === ''){
+
+		if ($textbox_value === '') {
 			wc_add_notice( __('Please, complete the payment information.','woocommerce-custom-payment-gateway'), 'error');
 			return false;
         }
+
 		return true;
 	}
 
