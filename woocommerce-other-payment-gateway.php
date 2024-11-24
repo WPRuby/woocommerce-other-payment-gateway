@@ -13,6 +13,7 @@
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
+use Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry;
 
 $active_plugins = apply_filters('active_plugins', get_option('active_plugins'));
 if(wpruby_custom_payment_is_woocommerce_active()){
@@ -55,4 +56,21 @@ add_action( 'before_woocommerce_init', function() {
 	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
 		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
 	}
+} );
+
+add_action( 'woocommerce_blocks_loaded',  function () {
+    require_once plugin_dir_path(__FILE__). 'blocks/class-other-payment-block.php';
+    add_action(
+        'woocommerce_blocks_payment_method_type_registration',
+        function( PaymentMethodRegistry $payment_method_registry ) {
+            $payment_method_registry->register( new Other_Payment_Block );
+        }
+    );
+});
+
+
+add_action( 'before_woocommerce_init', function() {
+    if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+        \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'cart_checkout_blocks', __FILE__, true );
+    }
 } );

@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@wordpress/scripts": "^30.4.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@wordpress/data": "^10.11.0"
+  }
+}
