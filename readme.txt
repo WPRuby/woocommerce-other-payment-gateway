@@ -4,10 +4,11 @@ Donate link: https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/
 Tags: woocommerce,payment gateway, woocommerce extension, other payment, custom payment
 Requires at least: 4.0
 Tested up to: 6.7
-Stable tag: 1.3.11
+Stable tag: 1.4.0
 Requires PHP: 7.0
 WC requires at least: 3.0
-WC tested up to: 9.1
+WC tested up to: 9.4
+Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -126,6 +127,10 @@ The debug mode is an excellent tool to test out the plugin’s settings and the 
 4. Activate the plugin in the Plugin dashboard
 
 == Changelog ==
+= 1.4.0 =
+* Added: WooCommerce Checkout Blocks support.
+* Fixed: Validation of payment textarea was required even if the textarea is hidden.
+
 = 1.3.11 =
 * Added: WordPress 6.7 compatibility.
 
