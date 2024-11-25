@@ -2,3 +2,4 @@
 blocks/src export-ignore
 .gitattributes export-ignore
 .DS_Store export-ignore
+Makefile export-ignore
