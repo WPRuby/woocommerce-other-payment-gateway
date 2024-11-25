@@ -1,6 +1,5 @@
 <?php
 
-use Exception;
 use Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType;
 
 

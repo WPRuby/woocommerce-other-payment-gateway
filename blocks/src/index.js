@@ -14,8 +14,6 @@ function Content(props) {
 
     React.useEffect( () => {
         const unsubscribe = onPaymentProcessing( async () => {
-            // Here we can do any processing we need, and then emit a response.
-            // For example, we might validate a custom field, or perform an AJAX request, and then emit a response indicating it is valid or not.
             const myGatewayCustomData = '12345';
             const customDataIsValid = !! myGatewayCustomData.length;
 
