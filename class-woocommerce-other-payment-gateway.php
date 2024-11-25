@@ -65,7 +65,7 @@ class WC_Other_Payment_Gateway extends WC_Payment_Gateway{
 						'title' => __( 'Order Status After The Checkout', 'woocommerce-other-payment-gateway' ),
 						'type' => 'select',
 						'options' => wc_get_order_statuses(),
-						'default' => 'wc-on-hold',
+						'default' => 'wc-completed',
 						'description' 	=> __( 'The default order status if this gateway used in payment.', 'woocommerce-other-payment-gateway' ),
 					),
 			 );
