@@ -1,4 +1,4 @@
-.idea
-blocks/src/index.js
-.gitattributes
-.DS_Store
+.idea export-ignore
+blocks/src export-ignore
+.gitattributes export-ignore
+.DS_Store export-ignore
