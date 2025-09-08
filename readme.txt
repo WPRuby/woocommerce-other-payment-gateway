@@ -1,13 +1,13 @@
-=== WooCommerce Custom Payment Gateway ===
+=== Custom Payment Gateway for WooCommerce ===
 Contributors: waseem_senjer,wprubyplugins
 Donate link: https://wpruby.com/plugin/woocommerce-custom-payment-gateway-pro/
 Tags: woocommerce,payment gateway, woocommerce extension, other payment, custom payment
 Requires at least: 4.0
-Tested up to: 6.7
-Stable tag: 1.4.0
-Requires PHP: 7.0
+Tested up to: 6.8
+Stable tag: 1.4.1
+Requires PHP: 7.4
 WC requires at least: 3.0
-WC tested up to: 9.4
+WC tested up to: 10.1
 Requires Plugins: woocommerce
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -107,7 +107,7 @@ The debug mode is an excellent tool to test out the plugin’s settings and the 
 = Using The WordPress Dashboard =
 
 1. Navigate to the 'Add New' in the plugins dashboard
-2. Search for 'WooCommerce Other Payment Gateway'
+2. Search for 'Custom Payment Gateway for WooCommerce'
 3. Click 'Install Now'
 4. Activate the plugin on the Plugin dashboard
 
