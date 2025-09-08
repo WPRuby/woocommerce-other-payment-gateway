@@ -127,6 +127,11 @@ The debug mode is an excellent tool to test out the plugin’s settings and the 
 4. Activate the plugin in the Plugin dashboard
 
 == Changelog ==
+
+= 1.4.1 =
+* Added: WordPress 6.8 compatibility.
+* Added: WooCommerce 10.1 compatibility.
+
 = 1.4.0 =
 * Added: WooCommerce Checkout Blocks support.
 * Fixed: Validation of payment textarea was required even if the textarea is hidden.
